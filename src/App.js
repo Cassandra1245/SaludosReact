@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Hola from './Saludos';
+import Adios from './Despedida';
 
 function App() {
+
+  let respuesta;
+  const situacion = true
+
+  if (situacion == true) {
+    respuesta = <Hola/>  
+  } else if (situacion == false) {
+    respuesta = <Adios/>  
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>{respuesta}</h1>
+      <p>Este es un proyecto de React para verificar si funciona.</p>
     </div>
   );
 }
